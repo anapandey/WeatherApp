@@ -1,0 +1,91 @@
+/* Stylesheet by Ana Pandey*/
+/* body */
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #49a7cc;
+    color: #666666;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 15px;
+}
+p {
+    font-size: 1.3em;
+    text-transform: capitalize;
+    /* Capitalizes first letter of each word */
+}
+img {
+    width: 90px;
+}
+input {
+    font-family: arial, helvetica, sans-serif;
+    padding: 5px 18px;
+    font-size: 0.9em;
+    border: none;
+    color: #cccccc;
+    width: 100%;
+    text-align: center;
+}
+/* footer */
+
+footer {
+    padding-top: 10px;
+    font-size: 15px;
+    text-shadow: none;
+}
+/* main app area */
+
+#container {
+    background-color: #666666;
+    width: 26%;
+    height: 850px;
+    margin: auto;
+}
+#topsection {
+    background-color: #FFF;
+    padding-bottom: 100px;
+    padding-top: 30px;
+    box-shadow: 3px 3px 3px grey;
+    text-shadow: 2px 2px 2px #CCCCCC;
+}
+#cityName {
+    font-size: 1.7em;
+    text-shadow: 1px 1px 1px #3399ff;
+}
+#iconOne {
+    padding: 10px;
+}
+#wind {
+    padding-top: 30px;
+}
+#wind,
+#humidity {
+    font-size: .6em;
+    color: #66ccff;
+}
+.row[id] {
+    color: #FFF;
+    padding-top: 80px;
+}
+
+
+/* -----------------media queries for smaller devices ----------------------------*/
+
+@media only screen and (min-width: 100px) and (max-width: 500px) {
+    body {
+        font-size: 18px;
+        background-color: #666666;
+        padding-top: 0px;
+    }
+    #container {
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+    #topsection {
+        padding-bottom: 60px;
+    }
+    .row[id] {
+        padding-top: 20px;
+    }
+}
