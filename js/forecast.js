@@ -14,6 +14,8 @@ function getPosition(position) {
 
  var forecastURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&APPID=d23737fe086028a8aeaea31d43a6817d";
 
+    var imgURL = 'http://openweathermap.org/img/w/';
+    
      //to get search item input
     $(document).keypress(function(e) {
         var searchItem = $('#search').val();
@@ -35,6 +37,10 @@ function getPosition(position) {
             $('#forecast').html(data.weather[0].description);
             $('#wind').html('Wind' + ': ' + data.wind.speed * 3600 / 1000 + ' Km/h');
             $('#humidity').html('Humidity' + ': ' + data.main.humidity + '%');
+            var icon = data.weather[0].icon;
+            var iconSrc = imgURL + icon + '.png';
+            $('#iconOne').empty();
+            $('#iconOne').prepend('<img src=" ' + iconSrc + ' ">');
             var fahrenheit = (Math.round(data.main.temp));
          console.log(data.main.temp);
             var celsius = Math.round(data.main.temp - 32) * 5 / 9 ;
@@ -58,6 +64,10 @@ function getPosition(position) {
     $.getJSON(forecastURL,function(data){
         console.log(data);
             $('#forecasttwo').html(data.list[5].weather[0].description);
+        var icon = data.list[5].weather[0].icon;
+            var iconSrc = imgURL + icon + '.png';
+            $('#icontwo').empty();
+            $('#icontwo').prepend('<img src=" ' + iconSrc + ' ">');
         
     });
 }
