@@ -12,10 +12,11 @@ function getPosition(position){
    var lat = position.coords.latitude;
    var lon = position.coords.longitude;
    var weatherURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=d23737fe086028a8aeaea31d43a6817d";
-  var forecastURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=d23737fe086028a8aeaea31d43a6817d";
+  
+     
+     
     
-    
-//getting current weather data
+
    $.getJSON(weatherURL,function(data){
     $('#cityName').html(data.name + ', ' + data.sys.country);
             $('#forecast').html(data.weather[0].description);
@@ -42,11 +43,7 @@ function getPosition(position){
              )};
 
              
-//getting forecast data
-             $.getJSON(forecastURL,function(data){
-       $('#forecasttwo').html(data.list[5].weather[0].description);
-   
-   });
+
 
 
 
