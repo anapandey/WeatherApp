@@ -13,7 +13,7 @@ function getPosition(position) {
     var weatherURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=imperial&APPID=d23737fe086028a8aeaea31d43a6817d";
 
  var forecastURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&APPID=d23737fe086028a8aeaea31d43a6817d";
-     getWeather(weatheURL,forecastURL);
+     getWeather(weatherURL,forecastURL);
 }
     var imgURL = 'http://openweathermap.org/img/w/';
     
@@ -25,7 +25,7 @@ function getPosition(position) {
             if (searchItem != '') {
                 weatherURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?" + 'q=' + searchItem + '&units=imperial&APPID=d23737fe086028a8aeaea31d43a6817d' ;
                 forecastURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?" + 'q=' + searchItem + '&units=imperial&APPID=d23737fe086028a8aeaea31d43a6817d' ;
-                getWeather(weatheURL,forecastURL);
+                getWeather(weatherURL,forecastURL);
             }
         }
     });
