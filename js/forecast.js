@@ -2,9 +2,9 @@
 
 var unit = "&units=metric";
 var apiKey = "&APPID=d23737fe086028a8aeaea31d43a6817d";
-var locationAPI = 'http://ip-api.com/json/';
-var weatherAPI = 'http://api.openweathermap.org/data/2.5/weather?';
-var forecastAPI = 'http://api.openweathermap.org/data/2.5/forecast?';
+var locationAPI = 'https://cors-anywhere.herokuapp.com/http://ip-api.com/json/';
+var weatherAPI = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?';
+var forecastAPI = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?';
 var imgURL = 'http://openweathermap.org/img/w/';
 
 $(document).ready(function() {
