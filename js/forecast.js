@@ -2,16 +2,21 @@
 
 var unit = "&units=metric";
 var apiKey = "&APPID=d23737fe086028a8aeaea31d43a6817d";
-var locationAPI = 'https://cors-anywhere.herokuapp.com/http://ip-api.com/json/';
-var weatherAPI = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?';
-var forecastAPI = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?';
+var locationAPI = 'http://ip-api.com/json/';
+//var weatherAPI = 'http://api.openweathermap.org/data/2.5/weather?';
+//var forecastAPI = 'http://api.openweathermap.org/data/2.5/forecast?';
 var imgURL = 'http://openweathermap.org/img/w/';
-
+var weatherURL;
 $(document).ready(function() {
     //api call to get location data
     $.getJSON(locationAPI, function(data) {
         console.log(data.lat);
-        var weatherURL = weatherAPI + 'lat=' + data.lat + '&lon=' + data.lon + unit + apiKey;
+        if (location.protocol === 'http:'){
+            weatherURL = 'http://api.openweathermap.org/data/2.5/weather?' + 'lat=' + data.lat + '&lon=' + data.lon + unit + apiKey;
+        } else {
+            weatherURL = 'https://api.openweathermap.org/data/2.5/weather?' + 'lat=' + data.lat + '&lon=' + data.lon + unit + apiKey;
+        }
+         
         var forecastURL = forecastAPI + 'lat=' + data.lat + '&lon=' + data.lon + unit + apiKey;
         getWeather(weatherURL, forecastURL);
     });
