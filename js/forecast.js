@@ -22,22 +22,8 @@ function getPosition(position){
             $('#forecast').html(data.weather[0].description);
             $('#wind').html('Wind' + ': ' + data.wind.speed * 3600 / 1000 + ' Km/h');
             $('#humidity').html('Humidity' + ': ' + data.main.humidity + '%');
-       var celsius = (Math.round(data.main.temp));
-            var fahrenheit = Math.round(data.main.temp) * 9 / 5 + 32;
-            var counter = 0;
-            $('#temp').html(celsius + '&deg;C');
-            //converts temperature unit with changed input (toggle button)
-            $("input").change(function() {
-                counter += 1;
-                if (counter % 2 == 1) {
-                    $('#temp').text(celsius + '  °C');
-
-                } else {
-                    $('#temp').text(fahrenheit + '  °F');
-
-                }
-   
-            }
+       
+   }
 
 
              )};
