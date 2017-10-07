@@ -11,8 +11,12 @@ if(navigator.geolocation){
 function getPosition(position){
    var lat = position.coords.latitude;
    var lon = position.coords.longitude;
-    var weatherURL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=imperial&APPID=d23737fe086028a8aeaea31d43a6817d';
-
+    var weatherURL = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=imperial&APPID=d23737fe086028a8aeaea31d43a6817d';
+if (location.protocol === 'http:') {
+   weatherURL = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=imperial&APPID=d23737fe086028a8aeaea31d43a6817d';
+} else {
+  weatherURL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&units=imperial&APPID=d23737fe086028a8aeaea31d43a6817d';
+}
     getWeather(weatherURL);
 }
      
