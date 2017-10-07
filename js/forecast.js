@@ -13,17 +13,7 @@ function getPosition(position){
    var lon = position.coords.longitude;
    var weatherURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=d23737fe086028a8aeaea31d43a6817d";
   var forecastURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=d23737fe086028a8aeaea31d43a6817d";
-    $(document).keypress(function(e) {
-        var searchItem = $('#search').val();
-        if (e.keyCode === 13) {
-            e.preventDefault();
-            if (searchItem != '') {
-                weatherURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?" + 'q=' + searchItem + "&APPID=d23737fe086028a8aeaea31d43a6817d";
-                forecastURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?"+ 'q=' + searchItem + "&APPID=d23737fe086028a8aeaea31d43a6817d";
-                
-            }
-        }
-    });
+    
     
 //getting current weather data
    $.getJSON(weatherURL,function(data){
