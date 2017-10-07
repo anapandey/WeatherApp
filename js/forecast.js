@@ -22,12 +22,14 @@ function getPosition(position) {
             if (searchItem != '') {
                 weatherURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?" + 'q=' + searchItem + "&units=metric" + '&APPID=d23737fe086028a8aeaea31d43a6817d' ;
                 forecastURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?" + 'q=' + searchItem + "&units=metric" + '&APPID=d23737fe086028a8aeaea31d43a6817d' ;
-                
-           
+                getWeather(weatherURL,forecastURL);
+            }
+        }
+    });
 
-
-
-    $.getJSON(weatherURL, function(data) {
+function getWeather(weatherURL,forecastURL){
+    
+  $.getJSON(weatherURL, function(data) {
              console.log(data);
             $('#cityName').html(data.name + ', ' + data.sys.country);
             $('#forecast').html(data.weather[0].description);
@@ -58,9 +60,9 @@ function getPosition(position) {
             $('#forecasttwo').html(data.list[5].weather[0].description);
         
     });
-                 }
-        }
-    });
+}
+
+   
 }
 
 
