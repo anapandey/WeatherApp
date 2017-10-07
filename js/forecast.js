@@ -10,9 +10,9 @@ if (navigator.geolocation) {
 function getPosition(position) {
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
-    var weatherURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=d23737fe086028a8aeaea31d43a6817d";
+    var weatherURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=metric" + "&APPID=d23737fe086028a8aeaea31d43a6817d";
 
- var forecastURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&APPID=d23737fe086028a8aeaea31d43a6817d";
+ var forecastURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=metric" + "&APPID=d23737fe086028a8aeaea31d43a6817d";
 
      //to get search item input
     $(document).keypress(function(e) {
@@ -20,12 +20,10 @@ function getPosition(position) {
         if (e.keyCode === 13) {
             e.preventDefault();
             if (searchItem != '') {
-                weatherURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?" + 'q=' + searchItem + '&APPID=d23737fe086028a8aeaea31d43a6817d' ;
-                forecastURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?" + 'q=' + searchItem + '&APPID=d23737fe086028a8aeaea31d43a6817d' ;
+                weatherURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?" + 'q=' + searchItem + "&units=metric" + '&APPID=d23737fe086028a8aeaea31d43a6817d' ;
+                forecastURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?" + 'q=' + searchItem + "&units=metric" + '&APPID=d23737fe086028a8aeaea31d43a6817d' ;
                 
-            }
-        }
-    });
+           
 
 
 
@@ -59,6 +57,9 @@ function getPosition(position) {
         console.log(data);
             $('#forecasttwo').html(data.list[5].weather[0].description);
         
+    });
+                 }
+        }
     });
 }
 
