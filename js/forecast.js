@@ -3,6 +3,11 @@
 var unit = "&units=metric";
 var apiKey = "&APPID=d23737fe086028a8aeaea31d43a6817d";
 var locationAPI = 'http://ip-api.com/json/';
+if (location.protocol === 'http:'){
+    locationAPI='http://ip-api.com/json/';
+} else {
+     locationAPI='https://ip-api.com/json/';
+}
 //var weatherAPI = 'http://api.openweathermap.org/data/2.5/weather?';
 //var forecastAPI = 'http://api.openweathermap.org/data/2.5/forecast?';
 var imgURL = 'http://openweathermap.org/img/w/';
