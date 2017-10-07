@@ -11,24 +11,52 @@ if(navigator.geolocation){
 function getPosition(position){
    var lat = position.coords.latitude;
    var lon = position.coords.longitude;
-    var weatherURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=d23737fe086028a8aeaea31d43a6817d";
-  
-     
-     
+   var weatherURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=d23737fe086028a8aeaea31d43a6817d";
+  var forecastURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=d23737fe086028a8aeaea31d43a6817d";
+    $(document).keypress(function(e) {
+        var searchItem = $('#search').val();
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            if (searchItem != '') {
+                weatherURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?" + 'q=' + searchItem + "&APPID=d23737fe086028a8aeaea31d43a6817d";
+                forecastURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?"+ 'q=' + searchItem + "&APPID=d23737fe086028a8aeaea31d43a6817d";
+                
+            }
+        }
+    });
     
-
+//getting current weather data
    $.getJSON(weatherURL,function(data){
     $('#cityName').html(data.name + ', ' + data.sys.country);
             $('#forecast').html(data.weather[0].description);
             $('#wind').html('Wind' + ': ' + data.wind.speed * 3600 / 1000 + ' Km/h');
             $('#humidity').html('Humidity' + ': ' + data.main.humidity + '%');
-   }
+       var celsius = (Math.round(data.main.temp));
+            var fahrenheit = Math.round(data.main.temp) * 9 / 5 + 32;
+            var counter = 0;
+            $('#temp').html(celsius + '&deg;C');
+            //converts temperature unit with changed input (toggle button)
+            $("input").change(function() {
+                counter += 1;
+                if (counter % 2 == 1) {
+                    $('#temp').text(celsius + '  °C');
+
+                } else {
+                    $('#temp').text(fahrenheit + '  °F');
+
+                }
+   
+            }
 
 
              )};
 
              
-
+//getting forecast data
+             $.getJSON(forecastURL,function(data){
+       $('#forecasttwo').html(data.list[5].weather[0].description);
+   
+   });
 
 
 
