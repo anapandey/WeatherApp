@@ -24,8 +24,7 @@ function getPosition(position) {
                 forecastURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?" + 'q=' + searchItem + '&units=imperial&APPID=d23737fe086028a8aeaea31d43a6817d' ;
                 
             }
-        }
-    });
+       
 
 
 
@@ -44,9 +43,9 @@ function getPosition(position) {
            $("input").change(function() {
                counter += 1;
                 if (counter % 2 == 1) {
-                    $('#temp').text(celsius + '  °F');
+                    $('#temp').text(celsius + '  °C');
                 } else {
-                    $('#temp').text(fahrenheit + '  °C');
+                    $('#temp').text(fahrenheit + '  °F');
 
                 }
             });
@@ -54,11 +53,13 @@ function getPosition(position) {
         }
 
 
-    )
+    );
     $.getJSON(forecastURL,function(data){
         console.log(data);
             $('#forecasttwo').html(data.list[5].weather[0].description);
         
+    });
+             }
     });
 }
 
