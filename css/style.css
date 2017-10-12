@@ -2,90 +2,174 @@
 /* body */
 
 body {
-    font-family: 'Ubuntu', sans-serif;
-    background-color: #49a7cc;
-    color: #666666;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    background-color: #CCCCCC;
+    color: #333333;
     text-align: center;
     font-size: 18px;
-    padding-top: 15px;
+    padding: 0px 25px;
+}
+h2,
+h4 {
+    color: #cccccc;
 }
 p {
     font-size: 1.3em;
     text-transform: capitalize;
     /* Capitalizes first letter of each word */
 }
+a,
+a:focus,
+a:hover,
+a:visited {
+    text-decoration: none;
+    color:#3399ff;
+}
 img {
     width: 90px;
+    margin: 10px 0px;
 }
-input {
-    font-family: arial, helvetica, sans-serif;
-    padding: 5px 18px;
-    font-size: 0.9em;
-    border: none;
-    color: #cccccc;
-    width: 80%;
-    text-align: center;
+/* header */
+
+header {
+    margin: auto;
+    font-family: 'Teko', sans-serif;
+    text-shadow: 1px 0px 1px #3399ff;
 }
 /* footer */
 
 footer {
-    padding-top: 10px;
-    font-size: 15px;
-    text-shadow: none;
+    position: absolute;
+    bottom: 0px;
+    font-size: 80%;
+    text-align: center;
+    padding: 10px;
+    width: 90%;
+    margin: auto;
 }
 /* main app area */
 
-#container {
+section {
+    padding-top: 20px;
     background-color: #666666;
-    width: 26%;
-    height: 850px;
-    margin: auto;
+    color: #fff;
+    box-sizing: border-box;
+    /* makes the layout fluid */
+    
+    width: 30%;
+    height: 450px;
+    display: block;
+    float: left;
+    margin: 15px;
+    box-shadow: 2px 2px 2px grey;
 }
-#topsection {
-    background-color: #FFF;
-    padding-bottom: 100px;
-    padding-top: 30px;
-    box-shadow: 3px 3px 3px grey;
-    text-shadow: 2px 2px 2px #CCCCCC;
+section:nth-of-type(2),
+section:nth-of-type(3) {
+    padding-top: 80px;
 }
-#cityName {
-    font-size: 1.7em;
-    text-shadow: 1px 1px 1px #3399ff;
+input {
+    box-sizing: border-box;
+    margin-top: 200px;
+    font-family: arial, helvetica, sans-serif;
+    padding: 5px 18px;
+    font-size: 0.9em;
+    color: #cccccc;
+    background-color: #666666;
+    color: #fff;
+    border: 0.5px solid #999999;
 }
-#iconOne {
+/* bootstrap class toggle button*/
+.toggle {   
+    font-size: 180%;
+    padding: 5px;
+    text-shadow: 1px 1px 1px grey;
+    color: brown;
+    font-family: arial, sans-serif;
+}
+#toggle-button {
+    background-color: #3399ff;
+    width: 50px;
     padding: 10px;
+    border-radius: 40px;
+    box-shadow: 2px 2px 2px #333333;
+    position: fixed;
+    left: 20px;
+    top: 510px;
 }
-#wind {
-    padding-top: 30px;
+#temp {
+    font-size: 2.9em;
 }
 #wind,
 #humidity {
-    font-size: .6em;
-    color: #66ccff;
+    font-size: 90%;
+    color: #3399ff;
 }
-.row[id] {
-    color: #FFF;
-    padding-top: 80px;
-}
+
 
 
 /* -----------------media queries for smaller devices ----------------------------*/
 
 @media only screen and (min-width: 100px) and (max-width: 500px) {
     body {
-        font-size: 18px;
+        padding: 0px;
         background-color: #666666;
-        padding-top: 0px;
     }
-    #container {
+    header {
+        display: none;
+    }
+    footer {
+        position: relative;
+    }
+    section {
+        float: none;
         width: 100%;
         height: auto;
-        margin: auto;
+        box-sizing: border-box;
+        box-shadow: none;
+        border-right: none;
     }
-    #topsection {
-        padding-bottom: 60px;
+    section:nth-of-type(2),
+    section:nth-of-type(3) {
+        padding-top: 0px;
     }
-    .row[id] {
-        padding-top: 20px;
+    img {
+        margin: 0px;
+    }
+    input {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    #temp {
+        font-size: 200%;
+        margin-top: 60px;
+    }
+    #toggle-button {
+        top: 300px;
+    }
+    #wind,
+    #humidity {
+        font-size: 90%;
+    }
+}
+
+/* -----------------media queries for medium devices ----------------------------*/
+
+@media only screen and (min-width: 500px) and (max-width: 1300px) {
+    body {
+        padding: 0px;
+    }
+    section {
+        box-sizing: border-box;
+        margin: 5px;
+    }
+    input {
+        box-sizing: border-box;
+        width: 80%;
+    }
+    #toggle-button {
+        left: 0px;
+    }
+    #temp {
+        margin-top: 30px;
     }
 }

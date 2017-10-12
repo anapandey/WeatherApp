@@ -35,7 +35,7 @@ function getWeather(weatherURL,forecastURL){
              console.log(data);
             $('#cityName').html(data.name + ', ' + data.sys.country);
             $('#forecast').html(data.weather[0].description);
-            $('#wind').html('Wind' + ': ' + data.wind.speed * 3600 / 1000 + ' Km/h');
+            $('#wind').html('Wind' + ': ' + Math.round(data.wind.speed * 3600 / 1000) + ' Km/h');
             $('#humidity').html('Humidity' + ': ' + data.main.humidity + '%');
             var icon = data.weather[0].icon;
             var iconSrc = imgURL + icon + '.png';
@@ -43,7 +43,7 @@ function getWeather(weatherURL,forecastURL){
             $('#iconOne').prepend('<img src=" ' + iconSrc + ' ">');
             var fahrenheit = (Math.round(data.main.temp));
          console.log(data.main.temp);
-            var celsius = Math.round(data.main.temp - 32) * 5 / 9 ;
+            var celsius = Math.round((data.main.temp - 32) * 5 / 9 );
             var counter = 0;
             $('#temp').html(fahrenheit + '&deg;F');
             //converts temperature unit with changed input (toggle button)

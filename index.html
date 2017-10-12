@@ -2,54 +2,53 @@
 <html lang="en">
 
 <head>
-    <title>Weather Predictor</title>
+    <title>Weather Predictor App</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Ana Pandey">
 
     <!-- link to external stylesheets -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed" rel="stylesheet">
     <link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- link to external scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-    
+
 
 
 </head>
 
 <body>
-    <!--container area for displaying main app on bigger device -->
-    <div id="container">
-        <div id="topsection">
-            <div class="row">
-                <p id='cityName'></p>
-                <div id="iconOne"></div>
-                <p id="forecast"></p>
-            </div>
-            <div id='temperature'>
-                <p id='temp'></p>
-                <input type="checkbox" checked data-toggle="toggle" data-on="C" data-off="F" data-size="mini">
-            </div>
+    <header>
+        <h1>Weather App</h1>
+    </header>
+    <!--area for main app -->
+    <section>
+        <h2 id='cityName'></h2>
+        <div id="iconOne"></div>
+        <p id="forecast"></p>
+
+        <div id='toggle-button'>
+            <input type="checkbox" checked data-toggle="toggle" data-on="&degC" data-off="&degF" data-size="mini">
         </div>
-        <input id='search' type='text' placeholder='Enter a new city here'>
+        <p id='temp'></p>
+    </section>
+    <section>
         <p id='wind'></p>
         <p id='humidity'></p>
-
-        <!-- tomorrow's forecast -->
-        <div class="row" id="forecastRow">
-            <h4>Tomorrow's Forecast</h4>
-            <p id='forecasttwo'></p>
-            <p id='icontwo'></p>
-        </div>
-    </div>
-
-    <!-- footer for creadits -->
-    <footer>
-        Ana Pandey
+        <input id='search' type='text' placeholder='Enter a new city here'>
+    </section>
+    <section>
+        <h4>Tomorrow's Forecast</h4>
+        <p id='forecasttwo'></p>
+        <p id='icontwo'></p>
+    </section>
+    <!-- footer -->
+    <footer>Coded by Ana Pandey, Powered by <a target="blank" href="https://openweathermap.org">Open Weather Map</a>
     </footer>
 
     <!-- links to js file -->
