@@ -39,8 +39,6 @@ header {
 /* footer */
 
 footer {
-    position: absolute;
-    bottom: 0px;
     font-size: 80%;
     text-align: center;
     padding: 10px;
